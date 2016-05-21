@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        SRS Datepicker
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <link href="~/font-awesome.css" rel="stylesheet" />
+    <link href="srs.datepicker.css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="home">
+       <div class="text-center">
+           <h3>Date picker</h3>
+       </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <srs-datepicker start-date="startDate"
+                                end-date="endDate"
+                                format="DD/MM/YYYY"
+                                from-label="Start Date"
+                                show-placeholder="true"
+                                to-label="End Date"
+                                show-icon="true">
+                </srs-datepicker>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/jquery-1.9.1.min.js"></script>
+    <script src="~/moment.min.js"></script>
+    <script src="~/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app', []);
+        app.controller('home', function ($scope) {
+            $scope.startDate = '';
+            $scope.endDate = '';
+        })
+    </script>
+    <script src="srsDatepicker.js"></script>
+</body>
+</html>
