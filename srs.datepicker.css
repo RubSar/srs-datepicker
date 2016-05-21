@@ -1,0 +1,272 @@
+/*general styles independet from media size*/
+
+.srs-datepicker-container {
+  border-radius: 7px;
+}
+
+.srs-datepicker-container input.active-field {
+  border: 1px solid rgba(30, 11, 89, 0.7) !important;
+  color: #1e0b59;
+}
+
+.srs-datepicker-container input.active-field + span.inner-icon {
+  color: #1e0b59;
+}
+
+.srs-datepicker-container .inner-icon-wrapper {
+  position: relative;
+  padding: 0px;
+}
+
+.srs-datepicker-container .inner-icon-wrapper .inner-icon {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.srs-datepicker {
+  position: absolute;
+  z-index: 99;
+  border: 1px solid #c8def0;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  left: 15px;
+  top: 55px;
+  background: #fff;
+}
+
+.srs-datepicker .srs-calendar-container:first-child {
+  margin-right: 2px;
+}
+
+.srs-datepicker .srs-calendar-container {
+  background: #fff;
+  font-size: 11px;
+  color: #0272c7;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-header .controls {
+  padding: 10px 5px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #1e0b59;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-header .controls span.datepicker-arrow {
+  cursor: pointer;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-header .day-names span {
+  text-align: center;
+  float: left;
+  display: block;
+  color: #1e0b59;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body {
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day {
+  text-align: center;
+  float: left;
+  display: block;
+  color: #1e0b59;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.active {
+  background-color: #dcd2f9;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.in-range:not(.start-day):not(.end-day) {
+  background-color: #dcd2f9;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.start-day {
+  border: 1px solid #1e0b59;
+  position: relative;
+  background: #1e0b59;
+  color: #fff;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.start-day:before {
+  font-family: 'FontAwesome';
+  position: absolute;
+  color: #1e0b59;
+  top: 0;
+  content: "\f0da";
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.end-day {
+  border: 1px solid #1e0b59;
+  background: #1e0b59;
+  color: #fff;
+  position: relative;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.end-day:before {
+  font-family: 'FontAwesome';
+  position: absolute;
+  color: #1e0b59;
+  top: 0;
+  content: "\f0d9";
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day:not(.emptty):not(.disabled):hover {
+  border: 1px solid #1e0b59;
+}
+
+.srs-datepicker .srs-calendar-container .srs-calendar-body span.day.disabled {
+  pointer-events: none;
+  color: #c7bfbf;
+  cursor: not-allowed;
+}
+
+/*end general styles*/
+
+
+/*==========================*/
+
+
+/*media min 769 desktop*/
+
+@media screen and (min-width: 769px) {
+  .srs-datepicker {
+    width: 575px;
+    padding: 5px;
+  }
+  .srs-datepicker .srs-calendar-container {
+    width: 280px;
+    min-height: 320px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-header .controls span.datepicker-arrow {
+    padding: 3px 10px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-header .day-names span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 14px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body {
+    width: 280px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.start-day:before {
+    right: -8px;
+    font-size: 20px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.end-day {
+    border: 1px solid #527496;
+    position: relative;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.end-day:before {
+    left: -7px;
+    font-size: 20px;
+  }
+}
+
+/*end media 769 desktop*/
+
+
+/*==============================*/
+
+
+/*media min 768 Tablet*/
+
+@media screen and (max-width: 768px) and (min-width: 569px) {
+  .srs-datepicker {
+    width: 424px;
+  }
+  .srs-datepicker .srs-calendar-container {
+    width: 210px;
+    min-height: 251px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-header .controls span.datepicker-arrow {
+    padding: 3px 10px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-header .day-names span {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-size: 13px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body {
+    width: 210px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.start-day:before {
+    right: -7px;
+    font-size: 17px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.end-day:before {
+    left: -7px;
+    font-size: 18px;
+  }
+}
+
+/*end media 768 tablet*/
+
+
+/*==========================*/
+
+
+/*media max 568 phone*/
+
+@media screen and (max-width: 568px) {
+  .srs-datepicker {
+    width: 354px;
+  }
+  .srs-datepicker .srs-calendar-container {
+    width: 175px;
+    min-height: 221px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-header .controls span.datepicker-arrow {
+    padding: 3px 5px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-header .day-names span {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    font-size: 13px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body {
+    width: 175px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.start-day:before {
+    right: -6px;
+    font-size: 15px;
+  }
+  .srs-datepicker .srs-calendar-container .srs-calendar-body span.day.end-day:before {
+    left: -6px;
+    font-size: 15px;
+  }
+}
+/*end media max 568 phone*/
