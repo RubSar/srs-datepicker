@@ -1,0 +1,92 @@
+<div class="srs-datepicker-container  form-group">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div ng-show="_showLabels">
+                <small>{{fromLabel}}</small>
+            </div>
+            <div class="inner-icon-wrapper">
+                <input type="text"
+                       ng-class="{'active-field':!endFieldActive && opened}"
+                       class="form-control checkin-field"
+                       ng-model="startModel"
+                       ng-focus="open($event, false)"
+                       ng-blur="setCheckIn()"
+                       placeholder="{{fromPlaceholder}}" />
+                <span class="inner-icon" ng-show="_showIcon" ng-click="open($event, false)">
+                    <i class=" fa fa-calendar"></i>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+            <div  ng-show="_showLabels">
+                <small>{{toLabel}}</small>
+            </div>
+            <div class="inner-icon-wrapper">
+                <input type="text"
+                       ng-class="{'active-field':endFieldActive && opened}"
+                       class="form-control checkout-field"
+                       ng-model="endModel"
+                       ng-focus="open($event, true)"
+                       ng-blur="setCheckOut()"
+                       placeholder="{{toPlaceholder}}" />
+
+                <span class="inner-icon" ng-show="_showIcon" ng-click="open($event, true)">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="srs-datepicker" ng-show="opened">
+
+        <div class="srs-calendar-container">
+            <div class="srs-calendar-header">
+                <div class="controls">
+                    <div class="text-center">
+                        <span class="pull-left datepicker-arrow"><i class="fa fa-chevron-left" ng-click="prevMonth()"></i></span>
+                        <span class=" datepicker-arrow">{{ dateFromValue }}</span>
+                    </div>
+                </div>
+                <div class="day-names">
+                    <span ng-repeat="dn in dayNames track by $index">
+                        <span>{{ dn }}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="srs-calendar-body">
+                <span ng-repeat="d in daysFrom track by $index">
+                    <span class="day"
+                          ng-click="selectDate($event, d)"
+                          ng-class="{disabled: !d.enabled, active: d.active && d.enabled, 'in-range': (d.date>startDate && d.date<endDate &&  bothSelected), 'end-day':isEndDay(d), 'start-day':isStartDay(d)}"
+                          ng-mouseover="markDate(d, false)">{{ d.day }}</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="srs-calendar-container">
+            <div class="srs-calendar-header">
+                <div class="controls">
+                    <div class="text-center">
+                        <span>{{ dateToValue }}</span>
+                        <span class="datepicker-arrow pull-right"><i class="fa fa-chevron-right" ng-click="nextMonth()"></i></span>
+                    </div>
+                </div>
+                <div class="day-names">
+                    <span ng-repeat="dn in dayNames track by $index">
+                        <span>{{ dn }}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="srs-calendar-body">
+                <span ng-repeat="d in daysTo track by $index">
+                    <span class="day"
+                          ng-click="selectDate($event, d)"
+                          ng-class="{disabled: !d.enabled, active: d.active && d.enabled, 'in-range': (d.date>startDate && d.date<endDate && bothSelected), 'end-day':isEndDay(d), 'start-day':isStartDay(d)}"
+                          ng-mouseover="markDate(d, true)">{{ d.day }}</span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+</div>
